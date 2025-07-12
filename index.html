@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Electronics Quiz - WISEROBOTICS</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="music-controls">
+        <label for="volume">Music:</label>
+        <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+    <div class="quiz-container">
+        <img src="wiserobotics_logo.jpg" alt="WISEROBOTICS Logo" class="wiserobotics-logo"> 
+        
+
+        <div class="header">
+            <div class="logo">WISEROBOTICS</div>
+            <div class="subtitle">Electronics Quiz</div>
+            
+        </div>
+
+        <div id="startScreen" class="start-screen">
+            <h2>Welcome to the Electronics Quiz!</h2>
+            <p>Test your knowledge about electronic components and circuits.</p>
+            
+            <div class="topic-list">
+                <h3>Topics Covered:</h3>
+                <ul>
+                    <li>LEDs (Light Emitting Diodes)</li>
+                    <li>Resistors</li>
+                    <li>Capacitors</li>
+                    <li>Breadboards</li>
+                    <li>Jumper Wires</li>
+                    <li>Potentiometers</li>
+                    <li>Switches</li>
+                    <li>Batteries</li>
+                    <li>LDR (Light Dependent Resistor)</li>
+                </ul>
+            </div>
+            
+            <p><strong>50 Questions • 3 Options Each</strong></p>
+            <input type="text" id="studentNameInput" class="student-name-input" placeholder="Enter your name" autocomplete="name" autocapitalize="words">
+            <button class="btn start-btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <div id="quizScreen" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            
+            <div class="question-number" id="questionNumber"></div>
+            <div class="question" id="question"></div>
+            
+            <div class="options" id="options"></div>
+            
+            <div class="score" id="currentScore"></div>
+            
+            <button class="btn" id="submitBtn" onclick="submitAnswer()">Submit Answer</button>
+            <button class="btn" id="skipBtn" onclick="skipQuestion()">Skip Question</button>
+        </div>
+
+        <div id="resultScreen" style="display: none;">
+            <h2>Quiz Complete!</h2>
+            <p id="studentNameDisplay" style="font-size: 1.3em; margin-bottom: 15px;"></p>
+            <div class="final-score" id="finalScore"></div>
+            <div id="performance"></div>
+            <div class="badge-container" id="badgeContainer"></div>
+            <button class="btn" onclick="restartQuiz()">Try Again</button>
+        </div>
+
+        <audio id="backgroundMusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" loop preload="auto"></audio>
+        <audio id="successAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
